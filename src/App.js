@@ -14,12 +14,12 @@ function App() {
   return (
     <Router>
       <div className="navbar">
-        <div>
-          <Link to="/"> Home</Link>
-          <Link to="/login"> Login</Link>
-          <Link to="/aboutus"> AboutUs</Link>
+        <div className="components">
+          <Link to="/" style={{ fontSize: "20px" }}> Home</Link>
+          <Link to="/login" style={{ fontSize: "20px" }}> Login</Link>
+          <Link to="/aboutus" style={{ fontSize: "20px" }}> About Us</Link>
         </div>
-        <div className="navcompanyname">Tax Doctor Nepal</div>
+        <div className="navcompanyname">Tax-Doctor Nepal</div>
       </div>
       <Routes>
         <Route path="/" element={<Home />} />
