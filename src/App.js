@@ -6,6 +6,7 @@ import {
   Switch,
   Link,
 } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { Home } from "./pages/Home";
 import { AboutUs } from "./pages/AboutUs";
 import { Login } from "./pages/Login";

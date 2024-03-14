@@ -1,12 +1,55 @@
 import React from "react";
+import { Carousel } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import img1 from "../assets/img1.jpg";
+import img2 from "../assets/img2.jpg";
+import img3 from "../assets/img3.png";
 
 export const Home = () => {
-  const css = {
-    textAlign: "center",
-    fontSize: "48px",
-    fontWeight: "bold",
-    margin: "50px 0",
-    color: "red",
+  const carousel = {
+    width: "100%",
+    height: "700px",
+    overflow: "hidden",
   };
-  return <div style={css}>HomePage</div>;
+
+  const imgStyle = {
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+  };
+
+  return (
+    <>
+      <div className="carousel" style={carousel}>
+        <Carousel>
+          <Carousel.Item>
+            <img
+              className="pic"
+              style={imgStyle}
+              src={img1}
+              alt="First slide"
+            />
+          </Carousel.Item>
+
+          <Carousel.Item>
+            <img
+              className="pic2"
+              style={imgStyle}
+              src={img2}
+              alt="Second slide"
+            />
+          </Carousel.Item>
+
+          <Carousel.Item>
+            <img
+              className="pic3"
+              style={imgStyle}
+              src={img3}
+              alt="Third slide"
+            />
+          </Carousel.Item>
+        </Carousel>
+      </div>
+    </>
+  );
 };
