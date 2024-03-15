@@ -1,27 +1,16 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Switch,
-  Link,
-} from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { Home } from "./pages/Home";
 import { AboutUs } from "./pages/AboutUs";
 import { Login } from "./pages/Login";
 import "./App.css";
+import { NavBar } from "./pages/NavBar";
+
 function App() {
   return (
     <Router>
-      <div className="navbar">
-        <div className="components">
-          <Link to="/" style={{ fontSize: "20px" }}> Home</Link>
-          <Link to="/login" style={{ fontSize: "20px" }}> Login</Link>
-          <Link to="/aboutus" style={{ fontSize: "20px" }}> About Us</Link>
-        </div>
-        <div className="navcompanyname">Tax-Doctor Nepal</div>
-      </div>
+      <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />

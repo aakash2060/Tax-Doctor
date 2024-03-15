@@ -4,33 +4,3 @@ body {
   margin: 0;
   font-family: 'Arial', sans-serif;
 }
-
-.navbar {
-  background-color: #000; /* Black background color */
-  color: red; /* White text color */
-  padding: 15px;
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-}
-.components{
-  text-align: right;
-  margin-right: 10%;
-  font-size: 40px;
-}
-
-.navbar a {
-  color: red; /* White text color for navbar links */
-  text-decoration: none;
-  margin: 0 15px;
-  font-size: 16px;
-}
-
-.navbar a:hover {
-  color: #ffcc00; /* Yellow text color on hover */
-}
-.navcompanyname {
-  font-weight: bold;
-  margin-right: 20px;
-  font-size: 40px;
-}
