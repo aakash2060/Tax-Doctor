@@ -3,3 +3,14 @@
     width: 10px;
     height: 10px;
 }
+/* Home.css */
+@keyframes shake {
+    0% { transform: rotate(-2deg); }
+    50% { transform: rotate(2deg); }
+    100% { transform: rotate(-2deg); }
+  }
+  
+  .shake {
+    animation: shake 0.3s infinite;
+  }
+  
