@@ -1,16 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
-import { TelephoneFill } from "react-bootstrap-icons";
-import { Tab } from "react-bootstrap";
+import { TelephoneFill, Envelope } from "react-bootstrap-icons";
+
 export function NavBar() {
   return (
     <div className="navbar">
-      <div className="navcompanyname">Tax-Doctor Nepal</div>
+      <div className="navcompanyname">TaxDoctor</div>
       <div className="contactinfo">
-        <TelephoneFill /> Contact Us Now!
-        <div className="phone">9494994949</div>
-      </div>
+      <div className="phone"><TelephoneFill /> 9843713458</div>
+        <div className="email"><Envelope/> taxdoctor63@gmail.com</div>
+        </div>
       <div className="components">
         <Link to="/" style={{ fontSize: "20px" }}>
           {"   "}

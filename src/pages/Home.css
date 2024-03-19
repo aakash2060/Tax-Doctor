@@ -13,4 +13,11 @@
   .shake {
     animation: shake 0.3s infinite;
   }
-  
+  /* Media query for adjusting styles based on screen width */
+@media screen and (max-width: 768px) {
+  /* Adjust styles for smaller screens */
+  .carousel-indicators [data-bs-target] {
+    width: 8px;
+    height: 8px;
+  }
+}
