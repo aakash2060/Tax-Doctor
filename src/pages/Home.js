@@ -7,6 +7,7 @@ import img3 from "../assets/our service.jpg";
 import "../pages/Home.css";
 import WhatsApp from "../assets/WhatsAppButtonGreenSmall.png";
 import { useState } from "react";
+import MessengerCustomerChat from "react-messenger-customer-chat";
 export const Home = () => {
   const carousel = {
     width: "100%",
@@ -89,6 +90,7 @@ export const Home = () => {
             onClick={openWhatsApp}
           />
         </div>
+        <MessengerCustomerChat pageId="101149956381509" appId="432968499221329" />,
       </div>
       <div className="GMaps">
         <iframe
