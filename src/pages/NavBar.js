@@ -4,6 +4,12 @@ import "./NavBar.css";
 import { TelephoneFill, Envelope } from "react-bootstrap-icons";
 
 export function NavBar() {
+  const scrollToAboutUs=()=>{
+    document.querySelector(".AboutUSSection").scrollIntoView({
+      behavior: "smooth",
+      block:"start",
+    });
+  };
   return (
     <div className="navbar">
       <div className="navcompanyname">TaxDoctor</div>
@@ -20,7 +26,7 @@ export function NavBar() {
           {"   "}
           Login
         </Link>
-        <Link to="/aboutus" style={{ fontSize: "20px" }}>
+        <Link to="/aboutus" style={{ fontSize: "20px" }} onClick={scrollToAboutUs}>
           {"   "}
           About Us
         </Link>
