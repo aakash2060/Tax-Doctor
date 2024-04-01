@@ -38,7 +38,7 @@ export const Home = () => {
 
   const openWhatsApp = () => {
     const whatsappURL =
-      "https://wa.me/+9779843713458?text=Hello%2C%20Namaste%21%20I%20have%20some%20questions%3F";
+    "https://wa.me/+9779843713458?text=Hello%2C%20Namaste%21%20I%20have%20some%20questions%3F";
     window.open(whatsappURL, "_blank");
   };
 
@@ -74,6 +74,7 @@ export const Home = () => {
             pageId="101149956381509"
             appId="432968499221329"/>
         </div>
+        
         <div
           className="OurServicesContainer"
           style={{
@@ -93,7 +94,7 @@ export const Home = () => {
               boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
             }}
           >
-            <div
+            <div id="About Us"
               className="Heading"
               style={{
                 fontWeight: "bold",
@@ -101,7 +102,7 @@ export const Home = () => {
                 marginBottom: "20px",
               }}
             >
-              About Us
+                About Us
             </div>
             <p>
               Welcome to Tax Doctor, your trusted financial consulting firm. We
