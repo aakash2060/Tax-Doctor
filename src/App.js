@@ -6,11 +6,13 @@ import { Login } from "./pages/Login";
 import "./App.css";
 import { NavBar } from "./pages/NavBar";
 import Footer from "./components/Footer.js";
+import { Banner } from "./components/Banner.js";
 function App() {
   return (
     <div>
     <Router>
       <NavBar />
+      <Banner />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />        

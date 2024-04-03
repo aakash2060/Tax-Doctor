@@ -1,0 +1,28 @@
+.banner {
+    background-color: goldenrod;
+    color: black;
+    padding: 1px;
+    display: flow;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .banner-contactinfo {
+    animation: moveLeftToRight 10s linear infinite;
+    display: flex; /* Added to allow space-between */
+    align-items: center; /* Added to vertically center align items */
+  }
+  
+  .banner-contactinfo span {
+    margin-right: 10px; /* Adjust as needed */
+  }
+  
+  @keyframes moveLeftToRight {
+    0% {
+      transform: translateX(-1%); /* Start from the left edge of the container */
+    }
+    100% {
+      transform: translateX(100%); /* Move to the right edge of the container */
+    }
+  }
+  

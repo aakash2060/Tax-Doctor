@@ -63,7 +63,7 @@ export const Home = () => {
               alt="Second slide"
             />
           </Carousel.Item>
-
+          
           <Carousel.Item>
             <img className="pic3" style={third} src={img3} alt="Third slide" />
           </Carousel.Item>

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
-import { TelephoneFill, Envelope } from "react-bootstrap-icons";
+
 
 export function NavBar() {
   // Function to handle scrolling to the "About Us" section
@@ -15,14 +15,6 @@ export function NavBar() {
   return (
     <div className="navbar">
       <div className="navcompanyname">TaxDoctor</div>
-      <div className="contactinfo">
-        <div className="phone">
-          <TelephoneFill /> 9843713458
-        </div>
-        <div className="email">
-          <Envelope /> taxdoctor63@gmail.com
-        </div>
-      </div>
       <div className="components">
         <Link to="/" style={{ fontSize: "20px" }}>
           {"   "}
