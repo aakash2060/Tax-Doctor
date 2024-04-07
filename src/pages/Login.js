@@ -1,5 +1,6 @@
 import React from "react";
-
+import { signInWithGoogle } from "../config/firebase";
+import "../pages/Login.css";
 export const Login = () => {
   const css = {
     textAlign: "center",
@@ -10,8 +11,16 @@ export const Login = () => {
   };
   return (
     <>
-      
-      <div style={css}>Login</div>
+      <div style={css}>
+        Login
+        <button
+          type="button"
+          class="loginWithGoogle"
+          onClick={signInWithGoogle}
+        >
+          Sign In With Google
+        </button>
+      </div>
     </>
   );
 };
