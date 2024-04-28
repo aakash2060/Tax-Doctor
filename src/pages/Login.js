@@ -13,6 +13,7 @@ export const Login = () => {
     <>
       <div style={css}>
         Login
+        <div>
         <button
           type="button"
           class="loginWithGoogle"
@@ -20,6 +21,7 @@ export const Login = () => {
         >
           Sign In With Google
         </button>
+        </div>
       </div>
     </>
   );

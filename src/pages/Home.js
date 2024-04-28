@@ -38,7 +38,7 @@ export const Home = () => {
 
   const openWhatsApp = () => {
     const whatsappURL =
-    "https://wa.me/+9779843713458?text=Hello%2C%20Namaste%21%20I%20have%20some%20questions%3F";
+      "https://wa.me/+9779843713458?text=Hello%2C%20Namaste%21%20I%20have%20some%20questions%3F";
     window.open(whatsappURL, "_blank");
   };
 
@@ -63,7 +63,7 @@ export const Home = () => {
               alt="Second slide"
             />
           </Carousel.Item>
-          
+
           <Carousel.Item>
             <img className="pic3" style={third} src={img3} alt="Third slide" />
           </Carousel.Item>
@@ -72,9 +72,10 @@ export const Home = () => {
           <img src={WhatsApp} width={65} alt="aaa" onClick={openWhatsApp} />
           <MessengerCustomerChat
             pageId="101149956381509"
-            appId="432968499221329"/>
+            appId="432968499221329"
+          />
         </div>
-        
+
         <div
           className="OurServicesContainer"
           style={{
@@ -94,7 +95,8 @@ export const Home = () => {
               boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
             }}
           >
-            <div id="About Us"
+            <div
+              id="About Us"
               className="Heading"
               style={{
                 fontWeight: "bold",
@@ -102,7 +104,7 @@ export const Home = () => {
                 marginBottom: "20px",
               }}
             >
-                About Us
+              About Us
             </div>
             <p>
               Welcome to Tax Doctor, your trusted financial consulting firm. We
@@ -133,10 +135,31 @@ export const Home = () => {
               marginLeft: "20px",
               boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
               borderRadius: "10px",
-            }}
-          >
+            }}>
+
+            <div style={{
+                fontWeight: "bold",
+                fontSize: "18px",
+                marginBottom: "20px",
+                marginTop: "20px"
+              }} > Our Samakhusi Location ↓ </div>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28253.262590248167!2d85.29002883476562!3d27.72784930000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19004f48dedb%3A0x40e866e18e0bfab8!2sTax%20Doctor!5e0!3m2!1sen!2sus!4v1711590439177!5m2!1sen!2sus"
+              width="600"
+              height="450"
+              style={{ border: 0 }}
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+            <div style={{
+                fontWeight: "bold",
+                fontSize: "18px",
+                marginBottom: "20px",
+                marginTop: "20px"
+              }}> Our Banasthali Location ↓</div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d113019.22316900724!2d85.21062965816533!3d27.72189490011074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x39eb190036e08e43%3A0x91bb8f65134fd735!2sKathmandu%2044600%2C%20Nepal!3m2!1d27.7219193!2d85.2930311!5e0!3m2!1sen!2sus!4v1714307841700!5m2!1sen!2sus"
               width="600"
               height="450"
               style={{ border: 0 }}
