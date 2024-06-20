@@ -1,28 +1,61 @@
+/* Basic styling for the banner */
 .banner {
-    background-color: goldenrod;
-    color: black;
-    padding: 1px;
-    display: flow;
-    justify-content: center;
-    overflow: hidden;
+  background-color: goldenrod;
+  color: black;
+  padding: 10px; /* Adjust padding as needed */
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center align items horizontally */
+  overflow: hidden;
+}
+
+/* Flex container for contact info */
+.banner-contactinfo {
+  display: flex; /* Use flexbox */
+  align-items: center; /* Vertically center align items */
+  animation: moveLeftToRight 20s linear infinite; /* Animation */
+  width: 100%;
+  white-space: nowrap; /* Prevent wrapping */
+}
+
+.banner-contactinfo span {
+  margin-right: 10px; /* Adjust spacing between elements */
+}
+
+@keyframes moveLeftToRight {
+  0% {
+    transform: translateX(-100%);
   }
-  
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .banner {
+    padding: 5px; /* Reduce padding */
+  }
+
   .banner-contactinfo {
-    animation: moveLeftToRight 20s linear infinite;
-    display: flex; /* Added to allow space-between */
-    align-items: center; /* Added to vertically center align items */
+    flex-wrap: nowrap; /* Prevent wrapping */
+    white-space: nowrap; /* Prevent wrapping */
+    overflow: hidden; /* Hide overflow */
   }
-  
+
   .banner-contactinfo span {
-    margin-right: 10px; /* Adjust as needed */
+    margin-right: 5px; /* Adjust margin */
   }
-  
-  @keyframes moveLeftToRight {
-    0% {
-      transform: translateX(-1%); /* Start from the left edge of the container */
-    }
-    100% {
-      transform: translateX(100%); /* Move to the right edge of the container */
-    }
+}
+
+@media screen and (max-width: 480px) {
+
+
+  .banner-contactinfo span {
+    margin-right: 5px;
   }
-  
+  .banner-contactinfo {
+    flex-wrap: nowrap; /* Prevent wrapping */
+    white-space: nowrap; /* Prevent wrapping */
+    overflow: visible; /* Hide overflow */
+  }
+}

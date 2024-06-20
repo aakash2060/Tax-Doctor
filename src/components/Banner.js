@@ -1,10 +1,6 @@
 import React from "react";
 import "./Banner.css";
-import {
-  TelephoneFill,
-  Envelope,
-  ExclamationTriangle,
-} from "react-bootstrap-icons";
+import { TelephoneFill, Envelope, ExclamationTriangle } from "react-bootstrap-icons";
 
 export function Banner() {
   return (

@@ -5,8 +5,6 @@ export const Box = styled.div`
   background: black;
   position: position;
   bottom: 0;
-  left: 0; /* Set left to 0 */
-  right: 0; /* Set right to 0 */
 `;
 
 export const FooterContainer = styled.div`
@@ -15,19 +13,27 @@ export const FooterContainer = styled.div`
   justify-content: center;
   max-width: 1000px;
   margin: 0 auto;
+  text-align: center; /* Center align all text in the container */
+
+  @media (max-width: 480px) {
+    align-items: center; /* Center align items on smaller screens */
+    text-align: center;
+  }
 `;
 
 export const Column = styled.div`
   display: flex;
   flex-direction: column;
-  text-align: left;
+  text-align: center;
   width: 25%; /* Each column takes 25% of the container width */
 
   @media (max-width: 1000px) {
     width: 100%; /* Full width for smaller screens */
     margin-bottom: 20px; /* Add margin between columns */
+    text-align: center;
   }
 `;
+
 export const Row = styled.div`
   display: flex;
   justify-content: space-between; /* Spread out elements evenly */
@@ -35,6 +41,7 @@ export const Row = styled.div`
 
   @media (max-width: 1000px) {
     flex-direction: column; /* Adjust layout for smaller screens */
+    text-align: center;
   }
 `;
 
@@ -55,4 +62,12 @@ export const Heading = styled.p`
   color: #fff;
   margin-bottom: 40px;
   font-weight: bold;
+`;
+export const CopyrightText = styled.p`
+  text-align: center;
+  color: #fff;
+  font-size: 28px;
+  @media (max-width: 480px) {
+    font: 16px;
+  }
 `;

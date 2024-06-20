@@ -5,10 +5,10 @@ import {
   Row,
   Column,
   FooterLink,
-  Heading,
+  Heading, CopyrightText
 } from "./FooterStyles";
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <Box>
       <div>
@@ -23,21 +23,12 @@ const Footer = () => {
           Your Destination for Financial Consultation and Services!
         </h1>
       </div>
-      <div>
       <FooterContainer>
         <Row>
           <Column>
             <Heading>About Us</Heading>
             <FooterLink href="#">Aim</FooterLink>
             <FooterLink href="#">Vision</FooterLink>
-            <FooterLink href="#">Testimonials</FooterLink>
-          </Column>
-          <Column>
-            <Heading>Services</Heading>
-            <FooterLink href="#">Writing</FooterLink>
-            <FooterLink href="#">Internships</FooterLink>
-            <FooterLink href="#">Coding</FooterLink>
-            <FooterLink href="#">Teaching</FooterLink>
           </Column>
           <Column>
             <Heading>Contact Us</Heading>
@@ -92,10 +83,12 @@ const Footer = () => {
             </FooterLink>
           </Column>
         </Row>
+        <Row>
+          <CopyrightText>&copy; All rights reserved Aakash P</CopyrightText>
+        </Row>
       </FooterContainer>
-      </div>
     </Box>
-
   );
 };
+
 export default Footer;

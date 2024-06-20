@@ -1,8 +1,6 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-import {getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth"// Your web app's Firebase configuration
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAhWDI-iL7vsLqlI6ybyYOIitLEx8hytps",
@@ -16,25 +14,25 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
-const provider = new GoogleAuthProvider()
+export const db = getFirestore(app);
+const provider = new GoogleAuthProvider();
 
-export const signInWithGoogle =() => {
-  signInWithPopup(auth, provider)
-  .then((result) => {
-    const name = result.user.displayName;
-    const email = result.user.email;
-    const profilePic = result.user.photoURL;
-    const newUser = result.user.newUser;
+export const signInWithGoogle = () => {
+  return signInWithPopup(auth, provider)
+    .then((result) => {
+      const user = result.user;
+      const name = user.displayName;
+      const email = user.email;
+      const profilePic = user.photoURL;
 
-    localStorage.setItem("name", name)
-    localStorage.setItem("email", email)
-    localStorage.setItem("profilePic",profilePic )
-    localStorage.setItem("newUser", newUser )
-    localStorage.setItem("name", name)
+      localStorage.setItem("name", name);
+      localStorage.setItem("email", email);
+      localStorage.setItem("profilePic", profilePic);
 
-  })
+      return user;
+    })
     .catch((error) => {
-    console.log(error);
-  });
+      console.log(error);
+      throw error;
+    });
 };
-
