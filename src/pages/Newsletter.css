@@ -112,7 +112,8 @@
   }
   .newsletter-subscription {
     max-width: 100%; /* Ensure it doesn't exceed the viewport width */
-    margin: 0 auto; /* Center align horizontally */
+    margin: 80px 10px; /* Center align horizontally */
+    
     padding: 20px; /* Add padding as needed */
     border: 0px; /* Example border */
     text-align: center; /* Center align content */
