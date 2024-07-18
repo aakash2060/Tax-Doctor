@@ -84,7 +84,7 @@ export const Footer = () => {
           </Column>
         </Row>
         <Row>
-          <CopyrightText>&copy; All rights reserved Aakash P</CopyrightText>
+          <CopyrightText>&copy; All rights reserved Aakash </CopyrightText>
         </Row>
       </FooterContainer>
     </Box>

@@ -1,6 +1,6 @@
        
 .navbar {
-  background-color: #000; /* Black background color */
+  background-color: black; /* Black background color */
   color: red; /* White text color */
   display: flex;
   justify-content: space; 
@@ -13,14 +13,14 @@
 } 
 
 .navbar a {
-  color: red; /* White text color for navbar links */
+  color: rgb(239, 111, 132); /* White text color for navbar links */
   text-decoration: none;
   margin: 0 20px;
   font-size: 16px;
 }
 
 .navbar a:hover {
-  color: #ffcc00; /* Yellow text color on hover */
+  color: white; /* Yellow text color on hover */
 }
 .navcompanyname {
   font-weight: bold;

@@ -2,7 +2,7 @@
 .banner {
   background-color: goldenrod;
   color: black;
-  padding: 10px; /* Adjust padding as needed */
+  padding: 1px; /* Adjust padding as needed */
   display: flex; /* Use flexbox for layout */
   justify-content: center; /* Center align items horizontally */
   overflow: hidden;

@@ -52,8 +52,19 @@
 .whatsapp-icon {
   cursor: pointer;
   margin-right: 10px;
+  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
 }
 
+.whatsapp-icon:hover {
+  transform: scale(1.1); /* Scale up on hover */
+  opacity: 0.8; /* Reduce opacity on hover */
+}
+
+.whatsapp-icon:active {
+  transform: scale(0.9); /* Scale down on click */
+  opacity: 1; /* Restore opacity on click */
+  transition: transform 0.1s ease-in-out; /* Faster transform on click */
+}
 /* Media Queries */
 
 @media screen and (max-width: 768px) {
