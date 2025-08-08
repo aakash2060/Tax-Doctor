@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { db, signInWithGoogle } from "../config/firebase"; // Adjust the path according to your project structure
+import { db } from "../config/firebase"; 
 import { collection, addDoc } from "firebase/firestore";
 import "./Newsletter.css";
-import googleSignInImg from "../assets/web_dark_rd_SI@2x.png";
  export const Newsletter = () => {
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
@@ -31,15 +30,15 @@ import googleSignInImg from "../assets/web_dark_rd_SI@2x.png";
     }
   };
 
-  const handleGoogleSignIn = async () => {
-    try {
-      const user = await signInWithGoogle();
-      setEmail(user.email);
-      await subscribe();
-    } catch (err) {
-      setError("Failed to sign in with Google. Please try again later.");
-    }
-  };
+  // const handleGoogleSignIn = async () => {
+  //   try {
+  //     const user = await signInWithGoogle();
+  //     setEmail(user.email);
+  //     await subscribe();
+  //   } catch (err) {
+  //     setError("Failed to sign in with Google. Please try again later.");
+  //   }
+  // };
 
   return (
     <div className="newsletter-subscription" style={{padding:'100px'}}>
@@ -60,12 +59,12 @@ import googleSignInImg from "../assets/web_dark_rd_SI@2x.png";
             <button onClick={subscribe}>Subscribe</button>
           </div></div>
           
-          <img
+          {/* <img
             src={googleSignInImg}
             alt="Sign in with Google"
             onClick={handleGoogleSignIn}
             className="google-signin"
-          />
+          /> */}
           {error && <p className="error-message">{error}</p>}
         </>
       )}

@@ -9,7 +9,7 @@ import img5 from "../assets/img5.jpeg";
 import img6 from "../assets/img6.jpeg";
 
 import WhatsApp from "../assets/whatsapp.png";
-import MessengerCustomerChat from "react-messenger-customer-chat";
+// import MessengerCustomerChat from "react-messenger-customer-chat";
 import "../pages/Home.css";
 
 const Home = () => {
@@ -185,11 +185,11 @@ const Home = () => {
                 );
               }}
             />
-            <MessengerCustomerChat
+            {/* <MessengerCustomerChat
               pageId="10114995638150"
               appId="432968499221329"
               htmlRef="messenger-ref"
-            />
+            /> */}
           </div>
         </div>
       </div>
