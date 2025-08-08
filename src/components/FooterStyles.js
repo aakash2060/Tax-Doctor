@@ -108,7 +108,7 @@ export const FooterLink = styled.a`
 
 export const Heading = styled.p`
   font-size: 24px;
-  color: #fbbf24;
+  color: white;
   margin-bottom: 40px;
   font-weight: bold;
   text-transform: uppercase;

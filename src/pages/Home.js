@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Phone, Mail, MapPin, ChevronLeft, ChevronRight, ExternalLink, Send, CheckCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, ChevronLeft, ChevronRight, ExternalLink, Send, CheckCircle, User } from 'lucide-react';
 import img1 from "../assets/img1.jpeg";
 import img3 from "../assets/img3.jpeg";
 import img4 from "../assets/img4.jpeg";
@@ -13,6 +13,15 @@ const Home = () => {
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
   const [error, setError] = useState("");
+  
+  // Contact form state
+  const [contactForm, setContactForm] = useState({
+    name: "",
+    email: "",
+    phone: ""
+  });
+  const [contactSubmitted, setContactSubmitted] = useState(false);
+  const [contactError, setContactError] = useState("");
 
   const carouselImages = [
     { src: img1, alt: "Tax Doctor Services" },
@@ -39,6 +48,13 @@ const Home = () => {
     const aboutUsSection = document.getElementById("about-us");
     if (aboutUsSection) {
       aboutUsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
+  const scrollToContact = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
@@ -86,6 +102,63 @@ const Home = () => {
     setError("");
   };
 
+  // Contact form functionality
+  const handleContactSubmit = async (e) => {
+    e.preventDefault();
+    
+    const { name, email, phone } = contactForm;
+    
+    if (!name || !email || !phone) {
+      setContactError("Please fill in all fields");
+      return;
+    }
+    
+    if (!/\S+@\S+\.\S+/.test(email)) {
+      setContactError("Please enter a valid email address");
+      return;
+    }
+
+    try {
+      // Using EmailJS service to send emails
+      const templateParams = {
+        client_name: name,
+        client_email: email,
+        client_phone: phone,
+        submission_time: new Date().toLocaleString()
+      };
+
+      // Replace 'YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', and 'YOUR_PUBLIC_KEY' with your EmailJS credentials
+      await window.emailjs.send(
+        'YOUR_SERVICE_ID',
+        'YOUR_TEMPLATE_ID', 
+        templateParams,
+        'YOUR_PUBLIC_KEY'
+      );
+      
+      // Store consultation request locally as backup
+      const consultations = JSON.parse(localStorage.getItem('consultation_requests') || '[]');
+      consultations.push({
+        ...contactForm,
+        date: new Date().toISOString(),
+        id: Date.now()
+      });
+      localStorage.setItem('consultation_requests', JSON.stringify(consultations));
+
+      setContactSubmitted(true);
+      setContactForm({ name: "", email: "", phone: "" });
+      setContactError("");
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      setContactError("Failed to send consultation request. Please try again.");
+    }
+  };
+
+  const handleContactReset = () => {
+    setContactSubmitted(false);
+    setContactForm({ name: "", email: "", phone: "" });
+    setContactError("");
+  };
+
   return (
     <div className="revamped-home">
       {/* Hero Carousel Section */}
@@ -115,7 +188,7 @@ const Home = () => {
                 Your trusted financial consulting firm specializing in comprehensive tax solutions and business advisory services.
               </p>
               <div className="hero-buttons">
-                <button className="btn-primary">Get Consultation</button>
+                <button className="btn-primary" onClick={scrollToContact}>Get Consultation</button>
                 <button className="btn-secondary" onClick={scrollToAboutUs}>
                   Learn More
                 </button>
@@ -268,6 +341,84 @@ const Home = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="contact-section">
+        <div className="container">
+          <div className="contact-content">
+            {contactSubmitted ? (
+              // Success State
+              <div className="contact-success">
+                <CheckCircle className="success-icon" />
+                <h2>Consultation Request Sent!</h2>
+                <p>Thank you for your interest. Our team will reach out to you within 24 hours to schedule your consultation.</p>
+                <button onClick={handleContactReset} className="btn-secondary">
+                  Submit Another Request
+                </button>
+              </div>
+            ) : (
+              // Contact Form
+              <div className="contact-form-container">
+                <div className="contact-header">
+                  <User className="contact-icon" />
+                  <h2>Get Your Free Consultation</h2>
+                  <p>Ready to streamline your tax and financial processes? Let's discuss how we can help your business thrive.</p>
+                </div>
+
+                <form onSubmit={handleContactSubmit} className="contact-form">
+                  <div className="form-group">
+                    <input
+                      type="text"
+                      placeholder="Your Full Name"
+                      value={contactForm.name}
+                      onChange={(e) => setContactForm({...contactForm, name: e.target.value})}
+                      className={`form-input ${contactError ? 'error' : ''}`}
+                      required
+                    />
+                  </div>
+                  
+                  <div className="form-group">
+                    <input
+                      type="email"
+                      placeholder="Your Email Address"
+                      value={contactForm.email}
+                      onChange={(e) => setContactForm({...contactForm, email: e.target.value})}
+                      className={`form-input ${contactError ? 'error' : ''}`}
+                      required
+                    />
+                  </div>
+                  
+                  <div className="form-group">
+                    <input
+                      type="tel"
+                      placeholder="Your Phone Number"
+                      value={contactForm.phone}
+                      onChange={(e) => setContactForm({...contactForm, phone: e.target.value})}
+                      className={`form-input ${contactError ? 'error' : ''}`}
+                      required
+                    />
+                  </div>
+
+                  <button type="submit" className="contact-submit-btn">
+                    <Send className="w-5 h-5" />
+                    Request Consultation
+                  </button>
+                  
+                  {contactError && (
+                    <div className="contact-error-message">
+                      {contactError}
+                    </div>
+                  )}
+                </form>
+
+                <p className="contact-privacy-note">
+                  Your information is secure and will only be used to contact you about your consultation.
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </section>
