@@ -1,26 +1,26 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Home  from "./pages/Home";
-import { Newsletter } from "./pages/Newsletter.js";
+import Home from "./pages/Home";
 import "./App.css";
 import { NavBar } from "./pages/NavBar";
 import Footer from "./components/Footer.js";
 import { Banner } from "./components/Banner.js";
 
 function App() {
+  console.log("App component rendering");
   return (
     <div>
       <Router>
-        <NavBar />
         <Banner />
+        <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/newsletter" element={<Newsletter />} />
         </Routes>
+        <Footer />
       </Router>
-      <Footer />
     </div>
   );
 }
+
 export default App;

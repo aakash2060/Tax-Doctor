@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Phone, Mail, MapPin, ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react';
+import { Phone, Mail, MapPin, ChevronLeft, ChevronRight, ExternalLink, Send, CheckCircle } from 'lucide-react';
 import img1 from "../assets/img1.jpeg";
 import img3 from "../assets/img3.jpeg";
 import img4 from "../assets/img4.jpeg";
@@ -10,6 +10,9 @@ import "./Home.css";
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [email, setEmail] = useState("");
+  const [subscribed, setSubscribed] = useState(false);
+  const [error, setError] = useState("");
 
   const carouselImages = [
     { src: img1, alt: "Tax Doctor Services" },
@@ -37,6 +40,50 @@ const Home = () => {
     if (aboutUsSection) {
       aboutUsSection.scrollIntoView({ behavior: "smooth", block: "start" });
     }
+  };
+
+  const scrollToNewsletter = () => {
+    const newsletterSection = document.getElementById("newsletter");
+    if (newsletterSection) {
+      newsletterSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
+  // Newsletter functionality
+  const handleNewsletterSubmit = (e) => {
+    e.preventDefault();
+    
+    if (!email || !/\S+@\S+\.\S+/.test(email)) {
+      setError("Please enter a valid email address");
+      return;
+    }
+
+    const subscribers = JSON.parse(localStorage.getItem('newsletter_subscribers') || '[]');
+    
+    if (subscribers.find(sub => sub.email === email)) {
+      setError("This email is already subscribed!");
+      return;
+    }
+
+    subscribers.push({
+      email: email,
+      date: new Date().toISOString(),
+      id: Date.now()
+    });
+    
+    localStorage.setItem('newsletter_subscribers', JSON.stringify(subscribers));
+    
+    setSubscribed(true);
+    setEmail("");
+    setError("");
+    
+    console.log(`New subscriber: ${email}`);
+  };
+
+  const handleNewsletterReset = () => {
+    setSubscribed(false);
+    setEmail("");
+    setError("");
   };
 
   return (
@@ -184,9 +231,7 @@ const Home = () => {
                     Samakhusi Office
                   </h4>
                   <p className="location-address">Mhepi Samakhusi, Kathmandu</p>
-                  <button className="location-link">
-                    View on Map <ExternalLink className="w-4 h-4" />
-                  </button>
+
                 </div>
                 <div className="location-map">
                   <iframe
@@ -209,9 +254,6 @@ const Home = () => {
                     Banasthali Office
                   </h4>
                   <p className="location-address">NayaBazaar Chowk, Kathmandu</p>
-                  <button className="location-link">
-                    View on Map <ExternalLink className="w-4 h-4" />
-                  </button>
                 </div>
                 <div className="location-map">
                   <iframe
@@ -253,6 +295,77 @@ const Home = () => {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter Section */}
+      <section id="newsletter" className="newsletter-section">
+        <div className="container">
+          <div className="newsletter-content">
+            {subscribed ? (
+              // Success State
+              <div className="newsletter-success">
+                <CheckCircle className="success-icon" />
+                <h2>Thank You for Subscribing!</h2>
+                <p>You'll receive our latest tax tips and financial insights directly in your inbox.</p>
+                <button onClick={handleNewsletterReset} className="btn-secondary">
+                  Subscribe Another Email
+                </button>
+              </div>
+            ) : (
+              // Newsletter Form
+              <div className="newsletter-form-container">
+                <div className="newsletter-header">
+                  <Mail className="newsletter-icon" />
+                  <h2>Stay Updated with Tax Doctor</h2>
+                  <p>Get the latest tax insights, regulatory updates, and financial tips delivered straight to your inbox.</p>
+                </div>
+
+                <form onSubmit={handleNewsletterSubmit} className="newsletter-form">
+                  <div className="newsletter-input-group">
+                    <input
+                      type="email"
+                      placeholder="Enter your email address"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      className={`newsletter-email-input ${error ? 'error' : ''}`}
+                      required
+                    />
+                    <button type="submit" className="newsletter-subscribe-btn">
+                      <Send className="w-5 h-5" />
+                      Subscribe
+                    </button>
+                  </div>
+                  
+                  {error && (
+                    <div className="newsletter-error-message">
+                      {error}
+                    </div>
+                  )}
+                </form>
+
+                {/* Benefits */}
+                <div className="newsletter-benefits">
+                  <div className="benefit-item">
+                    <CheckCircle className="benefit-icon" />
+                    <span>Weekly tax tips and strategies</span>
+                  </div>
+                  <div className="benefit-item">
+                    <CheckCircle className="benefit-icon" />
+                    <span>Latest regulatory updates</span>
+                  </div>
+                  <div className="benefit-item">
+                    <CheckCircle className="benefit-icon" />
+                    <span>Exclusive financial insights</span>
+                  </div>
+                </div>
+
+                <p className="newsletter-privacy-note">
+                  We respect your privacy. No spam, unsubscribe anytime.
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </section>

@@ -1,4 +1,4 @@
-/* Modern Home.css for Tax Doctor */
+/* Home.css */
 
 .revamped-home {
   font-family: 'Arial', sans-serif;
@@ -43,7 +43,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.3));
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
 }
 
 .hero-content {
@@ -101,7 +101,7 @@
 }
 
 .btn-primary:hover {
-  background: #f59e0b;
+  background: #ec4899;
   transform: scale(1.05);
 }
 
@@ -127,7 +127,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
   padding: 1rem;
@@ -138,7 +138,7 @@
 }
 
 .carousel-btn:hover {
-  background: rgba(0,0,0,0.7);
+  background: rgba(0, 0, 0, 0.7);
 }
 
 .carousel-prev {
@@ -165,7 +165,7 @@
   height: 12px;
   border-radius: 50%;
   border: none;
-  background: rgba(255,255,255,0.5);
+  background: rgba(255, 255, 255, 0.5);
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -240,6 +240,7 @@
 
 .section-title.centered {
   text-align: center;
+  color: #fbbf24;
 }
 
 .section-title .highlight {
@@ -302,9 +303,9 @@
 .location-card {
   background: white;
   border-radius: 1rem;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   transition: transform 0.3s ease;
 }
 
@@ -313,7 +314,7 @@
 }
 
 .location-header {
-  padding: 1.5rem;
+  padding: 1rem;
 }
 
 .location-title {
@@ -338,7 +339,7 @@
 }
 
 .location-link {
-  color: #f59e0b;
+  color: #fbbf24;
   background: none;
   border: none;
   font-weight: 600;
@@ -350,7 +351,7 @@
 }
 
 .location-link:hover {
-  color: #d97706;
+  color: #ec4899;
 }
 
 .location-map {
@@ -377,7 +378,7 @@
 }
 
 .philosophy-card {
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   border-radius: 1.5rem;
   padding: 3rem;
@@ -395,6 +396,175 @@
   font-size: 1.125rem;
 }
 
+/* Newsletter Section */
+.newsletter-section {
+  background: linear-gradient(135deg, #fbbf24 0%, #ec4899 100%);
+  padding: 5rem 0;
+  color: white;
+}
+
+.newsletter-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.newsletter-form-container {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 1.5rem;
+  padding: 3rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.newsletter-header {
+  margin-bottom: 2rem;
+}
+
+.newsletter-icon {
+  width: 4rem;
+  height: 4rem;
+  color: #fbbf24;
+  margin-bottom: 1.5rem;
+}
+
+.newsletter-header h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.newsletter-header p {
+  font-size: 1.25rem;
+  color: #6b7280;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.newsletter-form {
+  margin-bottom: 2rem;
+}
+
+.newsletter-input-group {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.newsletter-email-input {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.newsletter-email-input:focus {
+  outline: none;
+  border-color: #fbbf24;
+  box-shadow: 0 0 0 3px rgba(248, 180, 203, 0.1);
+}
+
+.newsletter-email-input.error {
+  border-color: #ef4444;
+}
+
+.newsletter-subscribe-btn {
+  background: #fbbf24;
+  color: #1f2937;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.newsletter-subscribe-btn:hover {
+  background: #ec4899;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(248, 180, 203, 0.3);
+}
+
+.newsletter-error-message {
+  color: #ef4444;
+  font-size: 0.875rem;
+  text-align: left;
+  margin-top: 0.5rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.newsletter-benefits {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #374151;
+  font-weight: 500;
+}
+
+.benefit-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #10b981;
+  flex-shrink: 0;
+}
+
+.newsletter-privacy-note {
+  font-size: 0.875rem;
+  color: #9ca3af;
+  margin: 0;
+}
+
+/* Newsletter Success State */
+.newsletter-success {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 1.5rem;
+  padding: 3rem;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.success-icon {
+  width: 5rem;
+  height: 5rem;
+  color: #fbbf24;
+  margin-bottom: 1.5rem;
+}
+
+.newsletter-success h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.newsletter-success p {
+  font-size: 1.25rem;
+  color: #6b7280;
+  margin-bottom: 2rem;
+}
+
 /* WhatsApp Float Button */
 .whatsapp-float {
   position: fixed;
@@ -407,7 +577,7 @@
   cursor: pointer;
   transition: transform 0.3s ease, filter 0.3s ease;
   border-radius: 50%;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .whatsapp-icon:hover {
@@ -425,7 +595,7 @@
     grid-template-columns: 1fr;
     gap: 3rem;
   }
-  
+
   .hero-title {
     font-size: 3rem;
   }
@@ -435,42 +605,71 @@
   .hero-section {
     height: 60vh;
   }
-  
+
   .hero-title {
     font-size: 2.5rem;
   }
-  
+
   .hero-subtitle {
     font-size: 1.125rem;
   }
-  
+
   .hero-buttons {
     flex-direction: column;
   }
-  
-  .btn-primary, .btn-secondary {
+
+  .btn-primary,
+  .btn-secondary {
     width: 100%;
     text-align: center;
   }
-  
+
   .section-title {
     font-size: 2.5rem;
   }
-  
+
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .stat-number {
     font-size: 2.5rem;
   }
-  
+
   .features-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .philosophy-card {
     padding: 2rem;
+  }
+
+  /* Newsletter responsive */
+  .newsletter-section {
+    padding: 3rem 1rem;
+  }
+
+  .newsletter-form-container,
+  .newsletter-success {
+    padding: 2rem;
+  }
+
+  .newsletter-header h2,
+  .newsletter-success h2 {
+    font-size: 2rem;
+  }
+
+  .newsletter-input-group {
+    flex-direction: column;
+  }
+
+  .newsletter-subscribe-btn {
+    justify-content: center;
+  }
+
+  .newsletter-benefits {
+    grid-template-columns: 1fr;
+    text-align: left;
   }
 }
 
@@ -478,37 +677,49 @@
   .hero-section {
     height: 50vh;
   }
-  
+
   .hero-title {
     font-size: 2rem;
   }
-  
+
   .hero-content {
     padding: 0 1rem;
   }
-  
+
   .section-title {
     font-size: 2rem;
   }
-  
+
   .stats-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .stat-number {
     font-size: 2rem;
   }
-  
+
   .about-text p {
     font-size: 1rem;
   }
-  
+
   .philosophy-card {
     padding: 1.5rem;
   }
-  
+
   .philosophy-text p {
     font-size: 1rem;
+  }
+
+  /* Newsletter mobile */
+  .newsletter-header h2,
+  .newsletter-success h2 {
+    font-size: 1.75rem;
+  }
+
+  .newsletter-icon,
+  .success-icon {
+    width: 3rem;
+    height: 3rem;
   }
 }
