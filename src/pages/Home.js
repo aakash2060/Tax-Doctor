@@ -15,7 +15,6 @@ const Home = () => {
   const [subscribed, setSubscribed] = useState(false);
   const [error, setError] = useState("");
   
-  // Contact form state
   const [contactForm, setContactForm] = useState({
     name: "",
     email: "",
@@ -67,7 +66,7 @@ const Home = () => {
   };
 
   // Newsletter functionality
-  const handleNewsletterSubmit = (e) => {
+  const handleNewsletterSubmit = async (e) => {
     e.preventDefault();
     
     if (!email || !/\S+@\S+\.\S+/.test(email)) {
@@ -82,19 +81,46 @@ const Home = () => {
       return;
     }
 
-    subscribers.push({
-      email: email,
-      date: new Date().toISOString(),
-      id: Date.now()
-    });
-    
-    localStorage.setItem('newsletter_subscribers', JSON.stringify(subscribers));
-    
-    setSubscribed(true);
-    setEmail("");
-    setError("");
-    
-    console.log(`New subscriber: ${email}`);
+    try {
+      // Send welcome email to subscriber
+      const welcomeParams = {
+        subscriber_email: email,
+        subscription_date: new Date().toLocaleDateString()
+      };
+
+      await emailjs.send(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_NEWSLETTER_TEMPLATE_ID, 
+        welcomeParams,
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+      );
+
+      subscribers.push({
+        email: email,
+        date: new Date().toISOString(),
+        id: Date.now()
+      });
+      
+      localStorage.setItem('newsletter_subscribers', JSON.stringify(subscribers));
+      
+      setSubscribed(true);
+      setEmail("");
+      setError("");
+      
+      console.log(`New subscriber: ${email} - Welcome email sent!`);
+    } catch (error) {
+
+      subscribers.push({
+        email: email,
+        date: new Date().toISOString(),
+        id: Date.now()
+      });
+      localStorage.setItem('newsletter_subscribers', JSON.stringify(subscribers));
+      
+      setSubscribed(true);
+      setEmail("");
+      setError("");
+    }
   };
 
   const handleNewsletterReset = () => {
@@ -120,7 +146,7 @@ const Home = () => {
     }
 
     try {
-      // Using EmailJS service to send emails
+
       const templateParams = {
         client_name: name,
         client_email: email,
@@ -130,7 +156,6 @@ const Home = () => {
 
       console.log('Sending email with params:', templateParams);
 
-      // Using environment variables for EmailJS credentials
       await emailjs.send(
         process.env.REACT_APP_EMAILJS_SERVICE_ID,
         process.env.REACT_APP_EMAILJS_TEMPLATE_ID, 
@@ -140,7 +165,6 @@ const Home = () => {
       
       console.log('Email sent successfully!');
       
-      // Store consultation request locally as backup
       const consultations = JSON.parse(localStorage.getItem('consultation_requests') || '[]');
       consultations.push({
         ...contactForm,
