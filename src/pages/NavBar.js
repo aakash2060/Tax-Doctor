@@ -22,15 +22,22 @@ export function NavBar() {
     setIsMenuOpen(false);
   };
 
+  const scrollToContact = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <nav className="modern-navbar">
       <div className="navbar-container">
         <div className="navbar-brand">
           <Link to="/" className="brand-link">
-            Tax<span style={{color: '#fbbf24'}}>Doctor</span>
+            Tax<span style={{ color: '#fbbf24' }}>Doctor</span>
           </Link>
         </div>
-        
+
         {/* Desktop Menu */}
         <div className="navbar-menu desktop-menu">
           <Link to="/" className="nav-link">Home</Link>
@@ -38,7 +45,10 @@ export function NavBar() {
             Newsletter
           </button>
           <button onClick={scrollToAboutUs} className="nav-link nav-button">
-            About Us
+            About 
+          </button>
+          <button onClick={scrollToContact} className="nav-link nav-button">
+            Contact Us
           </button>
         </div>
 
@@ -62,7 +72,10 @@ export function NavBar() {
               Newsletter
             </button>
             <button onClick={scrollToAboutUs} className="mobile-nav-link mobile-nav-button">
-              About Us
+              About 
+            </button>
+            <button onClick={scrollToContact} className="mobile-nav-link mobile-nav-button">
+              Contact Us
             </button>
           </div>
         )}

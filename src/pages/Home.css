@@ -101,7 +101,7 @@
 }
 
 .btn-primary:hover {
-  background: #ec4899;
+  background: white;
   transform: scale(1.05);
 }
 
@@ -652,7 +652,7 @@
 }
 
 .newsletter-subscribe-btn:hover {
-  background: #ec4899;
+  background: black;
   color: white;
   transform: translateY(-2px);
   box-shadow: 0 10px 20px rgba(248, 180, 203, 0.3);
