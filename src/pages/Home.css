@@ -1,94 +1,943 @@
 /* Home.css */
 
-.carousel-img {
+.revamped-home {
+  font-family: 'Arial', sans-serif;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  height: 70vh;
+  overflow: hidden;
+}
+
+.carousel-container {
+  position: relative;
   width: 100%;
-  height: 60vh;
-  object-fit: over-flow;
+  height: 100%;
 }
 
-.about-us {
+.carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+}
+
+.hero-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+  padding: 0 2rem;
+}
+
+.hero-text {
+  max-width: 600px;
+  color: white;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.hero-title .highlight {
+  color: #fbbf24;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: #e5e7eb;
+  line-height: 1.6;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: #fbbf24;
+  color: #000;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  transform: scale(1);
+}
+
+.btn-primary:hover {
+  background: #ec4899;
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  padding: 1rem 2rem;
+  border: 2px solid white;
+  border-radius: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: white;
+  color: #000;
+}
+
+/* Carousel Controls */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 20;
+}
+
+.carousel-btn:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.carousel-prev {
+  left: 1rem;
+}
+
+.carousel-next {
+  right: 1rem;
+}
+
+/* Carousel Indicators */
+.carousel-indicators {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 20;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator.active {
+  background: #fbbf24;
+}
+
+/* Stats Section */
+.stats-section {
+  background: linear-gradient(to right, #111827, #000);
+  color: white;
+  padding: 4rem 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  text-align: center;
+}
+
+.stat-item {
+  transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: scale(1.05);
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #fbbf24;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  color: #d1d5db;
+  font-size: 1rem;
+}
+
+/* About Section */
+.about-section {
+  padding: 5rem 0;
+  background: #f9fafb;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.section-header {
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #111827;
+  margin-bottom: 1.5rem;
+}
+
+.section-title.centered {
+  text-align: center;
+  color: #fbbf24;
+}
+
+.section-title .highlight {
+  color: #fbbf24;
+}
+
+.title-underline {
+  width: 6rem;
+  height: 4px;
+  background: #fbbf24;
+  margin-bottom: 2rem;
+}
+
+.title-underline.centered {
+  margin: 0 auto 2rem auto;
+}
+
+.title-underline.small {
+  width: 4rem;
+}
+
+.about-text {
+  color: #374151;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.about-text p {
+  margin-bottom: 1.5rem;
+  font-size: 1.125rem;
+}
+
+/* Features Grid */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.feature-dot {
+  width: 8px;
+  height: 8px;
+  background: #fbbf24;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Locations Section */
+.locations-section {
+  margin-top: 2rem;
+}
+
+.location-card {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 3rem;
+  transition: transform 0.3s ease;
+}
+
+.location-card:hover {
+  transform: scale(1.02);
+}
+
+.location-header {
+  padding: 1rem;
+}
+
+.location-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #111827;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.location-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #fbbf24;
+}
+
+.location-address {
+  color: #6b7280;
+  margin-bottom: 1rem;
+}
+
+.location-link {
+  color: #fbbf24;
+  background: none;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: color 0.3s ease;
+}
+
+.location-link:hover {
+  color: #ec4899;
+}
+
+.location-map {
+  height: 200px;
+}
+
+/* Contact Section */
+.contact-section {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  padding: 5rem 0;
+}
+
+.contact-content {
   max-width: 800px;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  text-align: center;
 }
 
-.about-us h2 {
+.contact-form-container {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 1.5rem;
+  padding: 3rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contact-header {
+  margin-bottom: 2.5rem;
+}
+
+.contact-icon {
+  width: 4rem;
+  height: 4rem;
+  color: #fbbf24;
+  margin-bottom: 1.5rem;
+}
+
+.contact-header h2 {
+  font-size: 2.5rem;
   font-weight: bold;
-  font-size: 24px;
-  margin-bottom: 20px;
+  color: #1f2937;
+  margin-bottom: 1rem;
 }
 
-.about-us p {
-  font-size: 16px;
-  line-height: 1.5;
+.contact-header p {
+  font-size: 1.25rem;
+  color: #6b7280;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-
-.gmaps {
-  max-width: 100%;
-  margin-left: 20px;
-  margin-top: 20px;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+.contact-form {
+  margin-bottom: 2rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.location-heading {
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+  color: #1f2937;
+  box-sizing: border-box;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #fbbf24;
+  box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.1);
+}
+
+.form-input.error {
+  border-color: #ef4444;
+}
+
+.form-input::placeholder {
+  color: #9ca3af;
+}
+
+.contact-submit-btn {
+  background: #fbbf24;
+  color: #1f2937;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  width: 100%;
+  font-size: 1.125rem;
+}
+
+.contact-submit-btn:hover {
+  background: black;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(248, 180, 203, 0.3);
+}
+
+.contact-submit-btn:active {
+  transform: translateY(0);
+}
+
+.contact-error-message {
+  color: #ef4444;
+  font-size: 0.875rem;
+  text-align: center;
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 0.5rem;
+}
+
+.contact-privacy-note {
+  font-size: 0.875rem;
+  color: #9ca3af;
+  margin: 0;
+  text-align: center;
+}
+
+/* Contact Success State */
+.contact-success {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 1.5rem;
+  padding: 3rem;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contact-success .success-icon {
+  width: 5rem;
+  height: 5rem;
+  color: #10b981;
+  margin-bottom: 1.5rem;
+}
+
+.contact-success h2 {
+  font-size: 2.5rem;
   font-weight: bold;
-  font-size: 18px;
-  margin: 20px 0;
+  color: #1f2937;
+  margin-bottom: 1rem;
 }
 
-.chat-icons {
+.contact-success p {
+  font-size: 1.25rem;
+  color: #6b7280;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* Philosophy Section */
+.philosophy-section {
+  background: linear-gradient(to right, #111827, #000);
+  color: white;
+  padding: 5rem 0;
+}
+
+.philosophy-content {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.philosophy-intro {
+  font-size: 1.25rem;
+  color: #d1d5db;
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+}
+
+.philosophy-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 1.5rem;
+  padding: 3rem;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.philosophy-text {
+  color: #d1d5db;
+  line-height: 1.7;
+}
+
+.philosophy-text p {
+  margin-bottom: 1.5rem;
+  font-size: 1.125rem;
+}
+
+/* Newsletter Section */
+.newsletter-section {
+  background: linear-gradient(135deg, #fbbf24 0%, #ec4899 100%);
+  padding: 5rem 0;
+  color: white;
+}
+
+.newsletter-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.newsletter-form-container {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 1.5rem;
+  padding: 3rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.newsletter-header {
+  margin-bottom: 2rem;
+}
+
+.newsletter-icon {
+  width: 4rem;
+  height: 4rem;
+  color: #fbbf24;
+  margin-bottom: 1.5rem;
+}
+
+.newsletter-header h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.newsletter-header p {
+  font-size: 1.25rem;
+  color: #6b7280;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.newsletter-form {
+  margin-bottom: 2rem;
+}
+
+.newsletter-input-group {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.newsletter-email-input {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.newsletter-email-input:focus {
+  outline: none;
+  border-color: #fbbf24;
+  box-shadow: 0 0 0 3px rgba(248, 180, 203, 0.1);
+}
+
+.newsletter-email-input.error {
+  border-color: #ef4444;
+}
+
+.newsletter-subscribe-btn {
+  background: #fbbf24;
+  color: #1f2937;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.newsletter-subscribe-btn:hover {
+  background: #ec4899;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(248, 180, 203, 0.3);
+}
+
+.newsletter-error-message {
+  color: #ef4444;
+  font-size: 0.875rem;
+  text-align: left;
+  margin-top: 0.5rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.newsletter-benefits {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #374151;
+  font-weight: 500;
+}
+
+.benefit-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #10b981;
+  flex-shrink: 0;
+}
+
+.newsletter-privacy-note {
+  font-size: 0.875rem;
+  color: #9ca3af;
+  margin: 0;
+}
+
+/* Newsletter Success State */
+.newsletter-success {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 1.5rem;
+  padding: 3rem;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.success-icon {
+  width: 5rem;
+  height: 5rem;
+  color: #fbbf24;
+  margin-bottom: 1.5rem;
+}
+
+.newsletter-success h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.newsletter-success p {
+  font-size: 1.25rem;
+  color: #6b7280;
+  margin-bottom: 2rem;
+}
+
+/* WhatsApp Float Button */
+.whatsapp-float {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  display: flex;
-  align-items: center;
   z-index: 1000;
 }
 
 .whatsapp-icon {
   cursor: pointer;
-  margin-right: 10px;
-  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  border-radius: 50%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .whatsapp-icon:hover {
-  transform: scale(1.1); /* Scale up on hover */
-  opacity: 0.8; /* Reduce opacity on hover */
+  transform: scale(1.1);
+  filter: brightness(1.1);
 }
 
 .whatsapp-icon:active {
-  transform: scale(0.9); /* Scale down on click */
-  opacity: 1; /* Restore opacity on click */
-  transition: transform 0.1s ease-in-out; /* Faster transform on click */
+  transform: scale(0.95);
 }
-/* Media Queries */
 
-@media screen and (max-width: 768px) {
-  .carousel-img {
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
     height: 60vh;
   }
 
-  .about-us {
-    padding: 15px;
+  .hero-title {
+    font-size: 2.5rem;
   }
 
-  .gmaps {
-    max-width: 100%;
-    margin-left: 0;
-    margin-top: 20px;
+  .hero-subtitle {
+    font-size: 1.125rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .philosophy-card {
+    padding: 2rem;
+  }
+
+  /* Newsletter responsive */
+  .newsletter-section {
+    padding: 3rem 1rem;
+  }
+
+  .newsletter-form-container,
+  .newsletter-success {
+    padding: 2rem;
+  }
+
+  .newsletter-header h2,
+  .newsletter-success h2 {
+    font-size: 2rem;
+  }
+
+  .newsletter-input-group {
+    flex-direction: column;
+  }
+
+  .newsletter-subscribe-btn {
+    justify-content: center;
+  }
+
+  .newsletter-benefits {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+
+  /* Contact responsive */
+  .contact-section {
+    padding: 3rem 1rem;
+  }
+
+  .contact-form-container,
+  .contact-success {
+    padding: 2rem;
+  }
+
+  .contact-header h2,
+  .contact-success h2 {
+    font-size: 2rem;
+  }
+
+  .contact-header p,
+  .contact-success p {
+    font-size: 1.125rem;
+  }
+
+  .contact-icon,
+  .contact-success .success-icon {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .form-input {
+    padding: 0.875rem 1.25rem;
+  }
+
+  .contact-submit-btn {
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
   }
 }
 
-@media screen and (max-width: 480px) {
-  .carousel-img {
-    height: 25vh;
+@media (max-width: 480px) {
+  .hero-section {
+    height: 50vh;
   }
 
-  .about-us {
-    padding: 10px;
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-content {
+    padding: 0 1rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+  }
+
+  .philosophy-card {
+    padding: 1.5rem;
+  }
+
+  .philosophy-text p {
+    font-size: 1rem;
+  }
+
+  /* Newsletter mobile */
+  .newsletter-header h2,
+  .newsletter-success h2 {
+    font-size: 1.75rem;
+  }
+
+  .newsletter-icon,
+  .success-icon {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  /* Contact mobile */
+  .contact-header h2,
+  .contact-success h2 {
+    font-size: 1.75rem;
+  }
+
+  .contact-header p,
+  .contact-success p {
+    font-size: 1rem;
+  }
+
+  .contact-form-container,
+  .contact-success {
+    padding: 1.5rem;
+  }
+
+  .contact-icon,
+  .contact-success .success-icon {
+    width: 2.5rem;
+    height: 2.5rem;
   }
 }
