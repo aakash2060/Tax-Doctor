@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Phone, Mail, MapPin, ChevronLeft, ChevronRight, ExternalLink, Send, CheckCircle, User } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 import img1 from "../assets/img1.jpeg";
 import img3 from "../assets/img3.jpeg";
 import img4 from "../assets/img4.jpeg";
@@ -127,13 +128,17 @@ const Home = () => {
         submission_time: new Date().toLocaleString()
       };
 
-      // Replace 'YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', and 'YOUR_PUBLIC_KEY' with your EmailJS credentials
-      await window.emailjs.send(
-        'YOUR_SERVICE_ID',
-        'YOUR_TEMPLATE_ID', 
+      console.log('Sending email with params:', templateParams);
+
+      // Using environment variables for EmailJS credentials
+      await emailjs.send(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID, 
         templateParams,
-        'YOUR_PUBLIC_KEY'
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
       );
+      
+      console.log('Email sent successfully!');
       
       // Store consultation request locally as backup
       const consultations = JSON.parse(localStorage.getItem('consultation_requests') || '[]');
@@ -148,7 +153,9 @@ const Home = () => {
       setContactForm({ name: "", email: "", phone: "" });
       setContactError("");
     } catch (error) {
-      console.error('EmailJS Error:', error);
+      console.error('EmailJS Error Details:', error);
+      console.error('Error message:', error.message);
+      console.error('Error text:', error.text);
       setContactError("Failed to send consultation request. Please try again.");
     }
   };

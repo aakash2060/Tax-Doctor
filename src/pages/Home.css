@@ -358,6 +358,167 @@
   height: 200px;
 }
 
+/* Contact Section */
+.contact-section {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  padding: 5rem 0;
+}
+
+.contact-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-form-container {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 1.5rem;
+  padding: 3rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contact-header {
+  margin-bottom: 2.5rem;
+}
+
+.contact-icon {
+  width: 4rem;
+  height: 4rem;
+  color: #fbbf24;
+  margin-bottom: 1.5rem;
+}
+
+.contact-header h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.contact-header p {
+  font-size: 1.25rem;
+  color: #6b7280;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-form {
+  margin-bottom: 2rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+  color: #1f2937;
+  box-sizing: border-box;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #fbbf24;
+  box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.1);
+}
+
+.form-input.error {
+  border-color: #ef4444;
+}
+
+.form-input::placeholder {
+  color: #9ca3af;
+}
+
+.contact-submit-btn {
+  background: #fbbf24;
+  color: #1f2937;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  width: 100%;
+  font-size: 1.125rem;
+}
+
+.contact-submit-btn:hover {
+  background: black;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(248, 180, 203, 0.3);
+}
+
+.contact-submit-btn:active {
+  transform: translateY(0);
+}
+
+.contact-error-message {
+  color: #ef4444;
+  font-size: 0.875rem;
+  text-align: center;
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 0.5rem;
+}
+
+.contact-privacy-note {
+  font-size: 0.875rem;
+  color: #9ca3af;
+  margin: 0;
+  text-align: center;
+}
+
+/* Contact Success State */
+.contact-success {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 1.5rem;
+  padding: 3rem;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contact-success .success-icon {
+  width: 5rem;
+  height: 5rem;
+  color: #10b981;
+  margin-bottom: 1.5rem;
+}
+
+.contact-success h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.contact-success p {
+  font-size: 1.25rem;
+  color: #6b7280;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
 /* Philosophy Section */
 .philosophy-section {
   background: linear-gradient(to right, #111827, #000);
@@ -671,6 +832,41 @@
     grid-template-columns: 1fr;
     text-align: left;
   }
+
+  /* Contact responsive */
+  .contact-section {
+    padding: 3rem 1rem;
+  }
+
+  .contact-form-container,
+  .contact-success {
+    padding: 2rem;
+  }
+
+  .contact-header h2,
+  .contact-success h2 {
+    font-size: 2rem;
+  }
+
+  .contact-header p,
+  .contact-success p {
+    font-size: 1.125rem;
+  }
+
+  .contact-icon,
+  .contact-success .success-icon {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .form-input {
+    padding: 0.875rem 1.25rem;
+  }
+
+  .contact-submit-btn {
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -721,5 +917,27 @@
   .success-icon {
     width: 3rem;
     height: 3rem;
+  }
+
+  /* Contact mobile */
+  .contact-header h2,
+  .contact-success h2 {
+    font-size: 1.75rem;
+  }
+
+  .contact-header p,
+  .contact-success p {
+    font-size: 1rem;
+  }
+
+  .contact-form-container,
+  .contact-success {
+    padding: 1.5rem;
+  }
+
+  .contact-icon,
+  .contact-success .success-icon {
+    width: 2.5rem;
+    height: 2.5rem;
   }
 }
