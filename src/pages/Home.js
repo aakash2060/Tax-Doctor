@@ -213,10 +213,10 @@ const Home = () => {
           <div className="hero-content">
             <div className="hero-text">
               <h1 className="hero-title">
-                Tax<span className="highlight">Doctor</span>
+                {/* Tax<span className="highlight">Doctor</span> */}
               </h1>
               <p className="hero-subtitle">
-                Your trusted financial consulting firm specializing in comprehensive tax solutions and business advisory services.
+                Your trusted financial consulting firm specialized in comprehensive tax solutions and business advisory services.
               </p>
               <div className="hero-buttons">
                 <button className="btn-primary" onClick={scrollToContact}>Get Consultation</button>
