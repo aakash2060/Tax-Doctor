@@ -1,5 +1,5 @@
 import React from "react";
-import { MapPin, Phone, Mail, Facebook, Instagram, Twitter, Youtube } from "lucide-react";
+import { MapPin, Phone, Mail, Facebook, Instagram, Twitter, Youtube, WhatsAp } from "lucide-react";
 import {
   Box,
   FooterContainer,
@@ -9,6 +9,7 @@ import {
   Heading,
   CopyrightText
 } from "./FooterStyles";
+import { Whatsapp } from "react-bootstrap-icons";
 
 export const Footer = () => {
   return (
@@ -61,22 +62,22 @@ export const Footer = () => {
           <Column>
             <Heading>Social Media</Heading>
             <FooterLink 
-              href="https://www.facebook.com/p/Tax-Doctor-100082973576706/?paipv=0&eav=AfbG01zafw8NJBCB_jtiIg_bl0-RQUT6falN31ytOf8yvYbMxhnJm9yTeaQao84TOco&_rdr"
+              href="https://www.facebook.com/p/Tax-doctor-100094566664072/"
               target="_blank"
               rel="noopener noreferrer"
             >
               <Facebook className="footer-icon" />
               <span>Facebook</span>
             </FooterLink>
-            <FooterLink href="#" target="_blank" rel="noopener noreferrer">
+            <FooterLink href="https://www.facebook.com/p/Tax-doctor-100094566664072/" target="_blank" rel="noopener noreferrer">
               <Instagram className="footer-icon" />
               <span>Instagram</span>
             </FooterLink>
-            <FooterLink href="#" target="_blank" rel="noopener noreferrer">
-              <Twitter className="footer-icon" />
-              <span>Twitter</span>
+            <FooterLink href="https://api.whatsapp.com/send/?phone=%2B9779843713458&text=Hello%2C+Namaste%21+I+have+some+questions%3F&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">
+              <Whatsapp className="footer-icon" />
+              <span>WhatsApp</span>
             </FooterLink>
-            <FooterLink href="#" target="_blank" rel="noopener noreferrer">
+            <FooterLink href="https://www.facebook.com/p/Tax-doctor-100094566664072/" target="_blank" rel="noopener noreferrer">
               <Youtube className="footer-icon" />
               <span>YouTube</span>
             </FooterLink>
